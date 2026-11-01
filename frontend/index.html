@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinRule AI – SEBI Regulatory Research Assistant</title>
+  <meta name="description" content="Ask any question about SEBI regulations and get instant, cited answers powered by AI and the Open India Law corpus." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Sidebar ─────────────────────────────────────────────────────────── -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-icon">⚖️</div>
+    <div class="logo-text">
+      <span class="logo-title">FinRule AI</span>
+      <span class="logo-sub">SEBI Research Assistant</span>
+    </div>
+  </div>
+
+  <button class="new-chat-btn" id="newChatBtn">
+    <span>＋</span> New Chat
+  </button>
+
+  <div class="sidebar-section-label">Example Questions</div>
+  <div class="example-questions" id="exampleQuestions">
+    <button class="example-btn" data-q="What are the disclosure requirements for listed entities under LODR?">
+      📋 LODR Disclosure Requirements
+    </button>
+    <button class="example-btn" data-q="What is the definition of insider under SEBI PIT Regulations?">
+      🔍 Insider Trading Definition
+    </button>
+    <button class="example-btn" data-q="What are the conditions for triggering an open offer under Takeover Regulations?">
+      📈 Takeover Open Offer Conditions
+    </button>
+    <button class="example-btn" data-q="What are the net worth requirements for a mutual fund asset management company?">
+      💰 Mutual Fund Net Worth Rules
+    </button>
+    <button class="example-btn" data-q="What are the SEBI rules for related party transactions by listed companies?">
+      🤝 Related Party Transactions
+    </button>
+    <button class="example-btn" data-q="What are the registration requirements for portfolio managers under SEBI?">
+      📝 Portfolio Manager Registration
+    </button>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="corpus-stats" id="corpusStats">
+      <div class="stat-row">
+        <span class="stat-icon">📚</span>
+        <span>1,145 SEBI Documents</span>
+      </div>
+      <div class="stat-row" id="vectorCount">
+        <span class="stat-icon">🔢</span>
+        <span>Loading index…</span>
+      </div>
+    </div>
+    <a href="http://localhost:8000/docs" target="_blank" class="api-link">API Docs ↗</a>
+  </div>
+</aside>
+
+<!-- ── Main Chat ──────────────────────────────────────────────────────── -->
+<main class="main" id="main">
+
+  <!-- Header -->
+  <header class="chat-header">
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+    <div class="header-center">
+      <span class="header-title">FinRule AI</span>
+      <span class="header-badge" id="statusBadge">● Connecting…</span>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="clearBtn" title="Clear chat">🗑</button>
+    </div>
+  </header>
+
+  <!-- Messages -->
+  <div class="messages-container" id="messagesContainer">
+    <div class="welcome-screen" id="welcomeScreen">
+      <div class="welcome-icon">⚖️</div>
+      <h1 class="welcome-title">FinRule AI</h1>
+      <p class="welcome-subtitle">
+        Ask any question about SEBI regulations.<br />
+        Answers are grounded in the <strong>Open India Law</strong> corpus with source citations.
+      </p>
+      <div class="welcome-chips">
+        <button class="chip" data-q="What are the disclosure requirements for listed entities under LODR?">LODR Disclosure</button>
+        <button class="chip" data-q="What is the definition of insider under SEBI PIT Regulations?">Insider Definition</button>
+        <button class="chip" data-q="What are the conditions for triggering an open offer under Takeover Regulations?">Takeover Rules</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input -->
+  <div class="input-area">
+    <div class="input-wrapper">
+      <textarea
+        id="questionInput"
+        class="question-input"
+        placeholder="Ask a SEBI regulatory question…"
+        rows="1"
+        maxlength="2000"
+      ></textarea>
+      <button class="send-btn" id="sendBtn" aria-label="Send question" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+    <div class="input-meta">
+      <span id="charCount" class="char-count">0 / 2000</span>
+      <span class="disclaimer">Answers are AI-generated. Verify important matters at <a href="https://www.sebi.gov.in" target="_blank">sebi.gov.in</a></span>
+    </div>
+  </div>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
