@@ -359,18 +359,6 @@ Top 20 hybrid candidates → `cross-encoder/ms-marco-MiniLM-L-6-v2` reads each
 | `OIL_PARQUET_URL` | *(Vaquill CDN)* | Download URL for SEBI Parquet |
 | `FAISS_INDEX_PATH` | `data/processed/sebi/faiss_index` | Index directory |
 
----
-
-## Development Roadmap
-
-| Phase | Features | Status |
-|-------|----------|--------|
-| **Phase 1** | SEBI Parquet ingestion, FAISS index, hybrid retrieval, Gemini, FastAPI, Chat UI | ✅ Complete |
-| **Phase 2** | Evaluation metrics (Recall@K, MRR, faithfulness) | 🔄 In progress |
-| **Phase 3** | API authentication & rate limiting | 🔜 |
-| **Phase 4** | RBI regulations corpus | 🔜 |
-| **Phase 5** | Streaming responses (SSE) | 🔜 |
-| **Phase 6** | MITRE ATT&CK / CISA KEV integration | 🔜 |
 
 ---
 
